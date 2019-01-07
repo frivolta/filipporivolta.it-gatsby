@@ -1,0 +1,16 @@
+.SingleMeta {
+    margin: 72px 18px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 110px;
+
+    @include respond-below(md) {
+        margin: 32px 18px;
+        position: relative!important;
+        display: block;
+        margin-top:-110px;
+        margin-bottom:72px;
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+}

@@ -1,0 +1,14 @@
+.BackBar{
+    background-image: linear-gradient(to right,$gradientColor);
+    text-align: center;
+    padding:16px 16px;
+    &__link{
+        color:$secondaryColor;
+        opacity: 1;
+        &:hover{
+            color: $secondaryColor;
+            opacity: .7;
+        }
+    }
+
+}

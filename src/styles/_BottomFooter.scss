@@ -1,0 +1,10 @@
+.BottomFooter{
+  display: block;
+  position: relative;
+  margin:0 auto;
+  text-align: center;
+  background-image: linear-gradient(to right, $secondGradientColor);
+  img{
+    padding:16px 32px; 
+  }
+}

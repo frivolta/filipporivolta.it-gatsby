@@ -1,0 +1,53 @@
+.Portfolio{
+  margin-top:80px;
+  background-image: url('/assets/img/dots.png');
+  background-repeat: no-repeat;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-attachment: fixed;
+  &__title{
+    margin-bottom:36px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.PortfolioElement {
+  background: #212121;
+  box-shadow: -2px 30px 40px 0 rgba(0, 0, 0, 0.70);
+  border-radius: 5px;
+  overflow: hidden;
+  &__text {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $secondaryColorAlpha;
+
+    h3 {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      height: 100%;
+      font-weight: 600;
+    }
+    z-index: 1;
+    opacity: 0;
+    transition: all .4s;
+  }
+}
+
+.PortfolioElement{
+  &:hover {
+    .PortfolioElement__text {
+      opacity: 1;
+      transition: all .4s;
+    }
+  }
+}

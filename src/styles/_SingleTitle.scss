@@ -1,0 +1,10 @@
+.SingleTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $altPrimaryColor;
+    h1{
+        margin-bottom: 0;
+    }
+    padding:36px;
+}

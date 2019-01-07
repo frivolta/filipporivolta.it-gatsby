@@ -1,0 +1,16 @@
+.TopFooter{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.footer-contacts{
+  margin-right: 16px;
+  @include respond-below(sm){
+    display: block;
+    position: relative;
+   margin-top:16px;
+  }
+}
