@@ -3,13 +3,13 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Slider from '../components/containers/slider/slider';
-import ServicesOwl from './../components/containers/services/services-owl'
+import ServicesCarousel from '../components/containers/services/services-carousel';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Slider/>
-    <ServicesOwl/>
+    <ServicesCarousel/>
   </Layout>
 )
 

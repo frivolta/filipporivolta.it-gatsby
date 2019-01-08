@@ -8,16 +8,14 @@ $gradientColor: #F05A28,#E80A89;
 $secondGradientColor: #222222, #3E3443;
 $altColor: #F05A28;
 
-
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,600,700');
-
 //Import React
 @import 'custom';
 @import "~bootstrap/scss/bootstrap";
-//@import "~slick-carousel/slick/slick.css";
-//@import "~slick-carousel/slick/slick-theme.css";
 @import './mixins.scss';
+//Import Slick Carousel
+@import 'vendors/swiper';
 
 * {
   -webkit-font-smoothing: antialiased;
