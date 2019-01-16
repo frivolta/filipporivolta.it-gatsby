@@ -44,5 +44,6 @@ module.exports = {
         name: "pages",
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }
