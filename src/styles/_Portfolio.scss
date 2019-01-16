@@ -1,6 +1,5 @@
 .Portfolio{
   margin-top:80px;
-  background-image: url('/assets/img/dots.png');
   background-repeat: no-repeat;
   background-position-x: 0%;
   background-position-y: 0%;
@@ -12,6 +11,9 @@
     justify-content: center;
     align-items: center;
   }
+  .slick-list{
+    padding-bottom: 50px!important;
+}
 }
 
 .PortfolioElement {

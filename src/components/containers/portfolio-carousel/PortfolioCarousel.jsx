@@ -6,6 +6,8 @@ import { Button } from 'reactstrap';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Dots from '../../../images/layout/dots.png'
+
 
 //Slider Params
 const parameters = {
@@ -16,7 +18,34 @@ const parameters = {
 	slidesToScroll: 1,
 	centerMode: true,
   autoplay: true,
-  arrows: false
+	arrows: false,
+	responsive:
+		[
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 968,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 690,
+				settings: {
+					slidesToShow: 1,
+				}
+			},
+		]
 };
 
 class PortfolioCarousel extends React.Component {
@@ -26,7 +55,7 @@ class PortfolioCarousel extends React.Component {
 	render() {
 		return (
 			<Fade bottom>
-				<div className="Portfolio">
+				<div className="Portfolio"  style={{backgroundImage: `url(${Dots})`}}>
 					<div className="Portfolio__title">
 						<h4 className="color--gradient text--spacing">WORKS</h4>
 					</div>
