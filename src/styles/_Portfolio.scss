@@ -41,9 +41,15 @@
     opacity: 0;
     transition: all .4s;
   }
+  img {
+    max-width: 100%;
+  }
 }
 
 .PortfolioElement{
+  position: relative;
+  margin-left: 18px;
+  margin-right: 18px;
   &:hover {
     .PortfolioElement__text {
       opacity: 1;
