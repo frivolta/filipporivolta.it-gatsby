@@ -1,16 +1,19 @@
 backend:
-  name: test-repo
+  name: github
+  repo: frivolta/filipporivolta.it-gatsby
 
 media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: portfolio
+    label: Portfolio
+    folder: portfolio
     create: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: title, label: "Project Title" }
+      - { name: body, label: "Descrizione", widget: markdown }
+      - { name: tasks, label: "Task List", widget: markdown }
+      - { name: "thumbnail", label: "Featured Image" }
