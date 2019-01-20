@@ -48,11 +48,7 @@ const parameters = {
 		]
 };
 
-class PortfolioCarousel extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-	render() {
+const PortfolioCarousel = () => {
 		return (
 			<Fade bottom>
 				<div className="Portfolio"  style={{backgroundImage: `url(${Dots})`}}>
@@ -61,12 +57,12 @@ class PortfolioCarousel extends React.Component {
 					</div>
 					<ul>
 						<Slider {...parameters}>
-							<PortfolioElement />
-							<PortfolioElement />
-							<PortfolioElement />
-							<PortfolioElement />
-							<PortfolioElement />
-							<PortfolioElement />
+							<PortfolioElement/>
+							<PortfolioElement/>
+							<PortfolioElement/>
+							<PortfolioElement/>
+							<PortfolioElement/>
+							<PortfolioElement/>
 						</Slider>
 					</ul>
 					<AnchorLink href="#contact">
@@ -77,7 +73,6 @@ class PortfolioCarousel extends React.Component {
 				</div>
 			</Fade>
 		);
-	}
 }
 
 export default PortfolioCarousel;
