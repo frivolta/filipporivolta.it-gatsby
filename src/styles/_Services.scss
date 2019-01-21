@@ -9,6 +9,9 @@
     background-position-x: 100%;
     background-position-y: 10%;
     background-attachment: fixed;
+    .slick-list{
+        padding-bottom: 50px!important;
+    }
 }
 
 .Services__button {
@@ -49,10 +52,6 @@
         text-align: center;
         text-transform: uppercase;
     }
-}
-
-.owl-stage-outer {
-    padding-bottom: 50px;
 }
 
 .service {

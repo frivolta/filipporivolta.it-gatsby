@@ -5,6 +5,14 @@ module.exports = {
     author: `Filippo Rivolta`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/portfolio`,
+        name: "markdown-pages",
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -44,5 +52,6 @@ module.exports = {
         name: "pages",
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }

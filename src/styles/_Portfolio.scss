@@ -1,6 +1,5 @@
 .Portfolio{
   margin-top:80px;
-  background-image: url('/assets/img/dots.png');
   background-repeat: no-repeat;
   background-position-x: 0%;
   background-position-y: 0%;
@@ -12,6 +11,9 @@
     justify-content: center;
     align-items: center;
   }
+  .slick-list{
+    padding-bottom: 50px!important;
+}
 }
 
 .PortfolioElement {
@@ -41,9 +43,15 @@
     opacity: 0;
     transition: all .4s;
   }
+  img {
+    max-width: 100%;
+  }
 }
 
 .PortfolioElement{
+  position: relative;
+  margin-left: 18px;
+  margin-right: 18px;
   &:hover {
     .PortfolioElement__text {
       opacity: 1;
