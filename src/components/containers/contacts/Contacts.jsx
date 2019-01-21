@@ -4,6 +4,7 @@ import Divider from '../../commons/divider';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button } from 'reactstrap';
 import ScrollableAnchor from 'react-scrollable-anchor'
+import axios from 'axios'
 
 
 export default class Contact extends React.Component {
@@ -14,13 +15,18 @@ export default class Contact extends React.Component {
     }
   }
   formSubmitHandler = (email,name,message) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: JSON.stringify({ "form-name": "contact", ...this.state })
+    axios({
+      method: 'post',
+      url: 'http://68.183.75.94/wp-json/contact-form-7/v1/contact-forms/34/feedback',
+      data: {
+        "your-name": "name",
+        "your-email": "email@email.com",
+        "your-message": "message"
+      },
+      headers: { 
+        "Content-Type": "application/x-www-form-urlencoded",
+      }
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
   }
 
   render() {
@@ -28,10 +34,9 @@ export default class Contact extends React.Component {
         <div className="Contact" id={'contact'}>
         
         <Divider dividerColor={'gradient'} />
-        
         {!this.state.formSent&&
         <Container>
-             <form name="contact" method="POST" data-netlify="true">
+             <form name="contact" method="POST" data-netlify="true" onSubmit={this.formSubmitHandler}>
           <p>
             <label>Your Name: <input type="text" name="name"/></label>
           </p>
