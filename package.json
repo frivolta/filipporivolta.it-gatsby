@@ -29,10 +29,7 @@
     "react-id-swiper": "^1.6.8",
     "react-owl-carousel": "^2.3.1",
     "react-reveal": "^1.2.2",
-<<<<<<< HEAD
-=======
     "react-scrollable-anchor": "^0.6.1",
->>>>>>> 3cfe11a90315e0ec0213746ea59e4b8c06705d1c
     "react-slick": "^0.23.2",
     "reactstrap": "^7.0.2",
     "sass": "^1.15.3",

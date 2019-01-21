@@ -17,7 +17,7 @@ export default class Contact extends React.Component {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+      body: JSON.stringify({ "form-name": "contact", ...this.state })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
@@ -26,9 +26,25 @@ export default class Contact extends React.Component {
   render() {
     return (
         <div className="Contact" id={'contact'}>
+        
         <Divider dividerColor={'gradient'} />
+        
         {!this.state.formSent&&
         <Container>
+             <form name="contact" method="POST" data-netlify="true">
+          <p>
+            <label>Your Name: <input type="text" name="name"/></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email"/></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
           <Row>
             <Col>
               <h2 className="Contact__title color--gradient">Talk to me</h2>
