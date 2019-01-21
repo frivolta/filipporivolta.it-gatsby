@@ -18,7 +18,8 @@ export default class Contact extends React.Component {
       method: 'post',
       body: `your-name=${name}&your-email=${email}&your-message=${message}`,
       headers: { 'Content-type': 'application/x-www-form-urlencoded' }
-    })
+    });
+    
   }
 
   render() {
