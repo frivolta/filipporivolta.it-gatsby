@@ -1,6 +1,6 @@
 ---
 title: Modern publications with Gatsby and Ghost
-templateKey: post.js
+templateKey: post
 date: 2019-01-22T15:00:15.362Z
 path: modern-publications-with-gatsby
 ---
