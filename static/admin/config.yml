@@ -16,4 +16,18 @@ collections:
       - { name: title, label: "Project Title" }
       - { name: body, label: "Descrizione", widget: markdown }
       - { name: tasks, label: "Task List", widget: markdown }
+      - { name: templateKey, label: "Template"}
       - { name: "thumbnail", label: "Featured Image" }
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: title, label: "Title" }
+      - { name: date, label: Date, widget: date }
+      - { name: path, label: Path }
+      - { name: body, label: "Descrizione", widget: markdown }
+
+
+
+

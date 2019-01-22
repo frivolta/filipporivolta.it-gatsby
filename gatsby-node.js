@@ -2,6 +2,8 @@ const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
+const { createFilePath } = require('gatsby-source-filesystem')
+const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
@@ -11,6 +13,7 @@ const slash = require(`slash`)
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+
   return new Promise((resolve, reject) => {
     // ==== PAGES (WORDPRESS NATIVE) ====
     graphql(
@@ -100,4 +103,9 @@ exports.createPages = ({ graphql, actions }) => {
       })
     // ==== END POSTS ====
   })
+
+  
 }
+
+
+
