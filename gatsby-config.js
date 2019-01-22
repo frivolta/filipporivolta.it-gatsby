@@ -91,7 +91,7 @@ module.exports = {
         // Search and Replace Urls across WordPress content.
         searchAndReplaceContentUrls: {
           sourceUrl: "http://68.183.75.94",
-          replacementUrl: "https://www.filipporivolta.it",
+          replacementUrl: "http://68.183.75.94",
         },
         // Set how many simultaneous requests are sent at once.
         concurrentRequests: 10,

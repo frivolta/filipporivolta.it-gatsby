@@ -11,9 +11,9 @@ class Post extends React.Component {
       <Layout>
         <Container>
           <Row>
-            <Col>
+            <Col xs="12" sm="8" className="Blog__content">
                 <h1 dangerouslySetInnerHTML={{__html: post.title}}/>
-                {post.content}
+                <p dangerouslySetInnerHTML={{__html: post.content}}/>
             </Col>
           </Row>
         </Container>
