@@ -1,0 +1,50 @@
+{
+  allWordpressAcfPortfolio {
+    edges {
+      node {
+        id
+        acf {
+          slug
+          project_title
+          description
+          task_list
+          credits
+          image_one {
+            id
+            source_url
+            localFile {
+              id
+              publicURL
+            }
+          }
+          image_two {
+            id
+            source_url
+            localFile {
+              id
+              publicURL
+            }
+          }
+          image_three {
+            id
+            source_url
+            localFile {
+              id
+              publicURL
+            }
+          }
+          featured_image {
+            id
+            source_url
+            localFile {
+              id
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+<p>{portfolio.map((item)=><p>{item.node.acf.project_title}<img src={item.node.acf.featured_image.localFile.publicURL} alt="title"/></p>)}</p>

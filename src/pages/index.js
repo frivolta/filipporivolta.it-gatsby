@@ -9,6 +9,7 @@ import DescriptionText from '../components/containers/description-text/Descripti
 import PortfolioCarousel from '../components/containers/portfolio-carousel/PortfolioCarousel';
 
 const IndexPage = ({data}) => {
+  const { edges: portfolio } = data.allWordpressAcfPortfolio;
 	return(
 	<Layout>
 		<SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]} />
@@ -19,25 +20,32 @@ const IndexPage = ({data}) => {
 			My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
 			engaging user interfaces.
 		</DescriptionText>
-    {/* <PortfolioCarousel items={data}/> */}
+    {console.log(data)}
+    <PortfolioCarousel items={portfolio}/>
 	</Layout>
 )};
 
-//Query portfolio elements from Netlify CMS 
-//Saved as md in portfolio folder
-/* export const portfolioQuery = graphql `
- query{
-  allMarkdownRemark(limit:10){
-    edges{
-      node{
-        frontmatter{
-          title,
-          path,
-          date
+export const pageQuery = graphql`
+  query {
+    allWordpressAcfPortfolio {
+      edges {
+        node {
+          id
+          acf {
+            slug
+            project_title
+            featured_image {
+              id
+              source_url
+              localFile {
+                id
+                publicURL
+              }
+            }
+          }
         }
       }
     }
   }
-}
-`  */
+`
 export default IndexPage;
