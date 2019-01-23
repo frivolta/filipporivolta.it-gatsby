@@ -9,7 +9,7 @@ class Portfolio extends React.Component {
     render() {
         return (
             <Layout>
-                {console.log("DATA: ",this.props.data)}
+                {console.log("DATA: ", this.props.data)}
                 <BackBar>Torna alla Home page</BackBar>
                 <div className="SingleTitle">
                     <h1 className="color--secondaryColor">title</h1>
@@ -43,10 +43,48 @@ class Portfolio extends React.Component {
 
 
 export default Portfolio
-export const pageQuery = graphql`
-  query currentPortfolioQuery($id: String!) {
-    wordpressAcfPosts(id: { eq: $id }) {
+export const portfolioQuery = graphql
+`query portfolioQuery($id: String!) {
+    wordpressAcfPortfolio(id: { eq: $id }) {
       id
+      acf {
+            slug
+            project_title
+            description
+            task_list
+            credits
+            image_one {
+                id
+                source_url
+                localFile {
+                    id
+                    publicURL
+                }
+            }
+            image_two {
+                id
+                source_url
+                localFile {
+                    id
+                    publicURL
+                }
+            }
+            image_three {
+                id
+                source_url
+                localFile {
+                    id
+                    publicURL
+                }
+            }
+            featured_image {
+                id
+                source_url
+                localFile {
+                    id
+                    publicURL
+                }
+            }
+        }
     }
-  }
-`
+}`
