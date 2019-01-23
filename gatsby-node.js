@@ -91,10 +91,47 @@ exports.createPages = ({ graphql, actions }) => {
           // The Post ID is prefixed with 'POST_'
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
-              path: `/${edge.node.slug}/`,
+              path: `/blog/${edge.node.slug}/`,
               component: slash(postTemplate),
               context: {
                 id: edge.node.id,
+              },
+            })
+          })
+          resolve()
+        })
+      })
+      .then(() => {
+        graphql(
+          `{
+            allWordpressAcfPortfolio {
+              edges {
+                node {
+                  id
+                  acf {
+                    slug
+                  }
+                }
+              }
+            }
+          }
+          `
+        ).then(result => {
+          if (result.errors) {
+            console.log(result.errors)
+            reject(result.errors)
+          }
+          const postTemplate = path.resolve("./src/templates/portfolio.js")
+          // We want to create a detailed page for each
+          // post node. We'll just use the WordPress Slug for the slug.
+          // The Post ID is prefixed with 'POST_'
+          _.each(result.data.allWordpressAcfPortfolio.edges, edge => {
+            createPage({
+              path: `portfolio/${edge.node.acf.slug}/`,
+              component: slash(postTemplate),
+              context: {
+                id: edge.node.id,
+                slug: edge.node.acf.slug
               },
             })
           })

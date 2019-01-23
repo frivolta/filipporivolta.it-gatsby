@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const PortfolioElement = ({ slug, title, image }) => (
 	<div className="PortfolioElement">
 		<div className="PortfolioElement__container">
-			<Link to={slug}>
+			<Link to={`/portfolio/${slug}`}>
 				<div className="PortfolioElement__text">
 					<h3 className="color--gradient">{title}</h3>
 				</div>
