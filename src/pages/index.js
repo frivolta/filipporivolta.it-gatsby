@@ -13,7 +13,7 @@ import Fade from 'react-reveal/Fade';
 
 const IndexPage = ({data}) => {
   const { edges: portfolio } = data.allWordpressAcfPortfolio;
-  const { edges: blog } = data.allWordpressPost;
+  /* const { edges: blog } = data.allWordpressPost; */
 	return(
 	<Layout>
 		<SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]} />

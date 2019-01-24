@@ -57,12 +57,13 @@ const PortfolioCarousel = () => {
 					</div>
 					<ul>
 						<Slider {...parameters}>
-							<PortfolioElement title="Project Test" slug="portfolio-test" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Project Test" slug="portfolio-test" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Project Test" slug="portfolio-test" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Project Test" slug="portfolio-test" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Project Test" slug="portfolio-test" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Project Test" slug="portfolio-test" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
+							
 						</Slider>
 					</ul>
 					<AnchorLink href="#contact">
