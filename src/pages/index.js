@@ -8,6 +8,8 @@ import ServicesCarousel from '../components/containers/services/services-carouse
 import DescriptionText from '../components/containers/description-text/DescriptionText';
 import PortfolioCarousel from '../components/containers/portfolio-carousel/PortfolioCarousel';
 import BlogWidget from '../components/containers/blog/blog-widget';
+import Fade from 'react-reveal/Fade';
+
 
 const IndexPage = ({data}) => {
   const { edges: portfolio } = data.allWordpressAcfPortfolio;
@@ -15,8 +17,12 @@ const IndexPage = ({data}) => {
 	return(
 	<Layout>
 		<SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]} />
-		<Slider />
-		<ServicesCarousel />
+		<Fade bottom>
+      <Slider />
+    </Fade>
+    <Fade bottom>
+		  <ServicesCarousel />
+    </Fade>
 		<DescriptionText title="I develop digital experiences,
       products and services" buttonText="Ask for more">
 			My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and

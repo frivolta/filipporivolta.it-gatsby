@@ -4,6 +4,8 @@ import { Container, Row, Col } from 'reactstrap';
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import BackBar from '../components/commons/backBar';
+import Fade from 'react-reveal/Fade';
+
 
 class Portfolio extends React.Component {
     render() {
@@ -16,24 +18,26 @@ class Portfolio extends React.Component {
                     <h1 className="color--secondaryColor">{item.project_title}</h1>
                 </div>
                 <Container>
-                    <Row>
-                        <Col md="8" xs="12">
-                            <div className="SingleImage">
-                                {item.image_one.localFile.publicURL && <img src={item.image_one.localFile.publicURL} alt={item.project_title}/>}
-                                {item.image_two.localFile.publicURL && <img src={item.image_two.localFile.publicURL} alt={item.project_title}/> }
-                                {item.image_three.localFile.publicURL && <img src={item.image_three.localFile.publicURL} alt={item.project_title}/> }
-                            </div>
-                        </Col>
-                        <Col md="4" xs="12">
-                            <div className="SingleMeta">
-                                <h3 className="SingleMeta__title color--gradient">Descrizione</h3>
-                                <p className="SingleMeta__description" dangerouslySetInnerHTML={ { __html : item.description } }/>
-                                <h4 className="SingleMeta__title color--gradient mt-4 mb-2">Task</h4>
-                                <p className="SingleMeta__description" dangerouslySetInnerHTML={ { __html : item.task_list } }/>
-                                <h4 className="SingleMeta__title color--gradient mt-4 mb-3"><small>{item.credits}</small></h4>
-                            </div>
-                        </Col>
-                    </Row>
+                    <Fade bottom>
+                        <Row>
+                            <Col md="8" xs="12">
+                                <div className="SingleImage">
+                                    {item.image_one.localFile.publicURL && <img src={item.image_one.localFile.publicURL} alt={item.project_title} />}
+                                    {item.image_two.localFile.publicURL && <img src={item.image_two.localFile.publicURL} alt={item.project_title} />}
+                                    {item.image_three.localFile.publicURL && <img src={item.image_three.localFile.publicURL} alt={item.project_title} />}
+                                </div>
+                            </Col>
+                            <Col md="4" xs="12">
+                                <div className="SingleMeta">
+                                    <h3 className="SingleMeta__title color--gradient">Descrizione</h3>
+                                    <p className="SingleMeta__description" dangerouslySetInnerHTML={{ __html: item.description }} />
+                                    <h4 className="SingleMeta__title color--gradient mt-4 mb-2">Task</h4>
+                                    <p className="SingleMeta__description" dangerouslySetInnerHTML={{ __html: item.task_list }} />
+                                    <h4 className="SingleMeta__title color--gradient mt-4 mb-3"><small>{item.credits}</small></h4>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Fade>
                 </Container>
                 <BackBar>Torna alla Home page</BackBar>
             </Layout>
@@ -44,7 +48,7 @@ class Portfolio extends React.Component {
 
 export default Portfolio
 export const portfolioQuery = graphql
-`query portfolioQuery($id: String!) {
+    `query portfolioQuery($id: String!) {
     wordpressAcfPortfolio(id: { eq: $id }) {
       id
       acf {
