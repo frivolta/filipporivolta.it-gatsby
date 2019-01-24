@@ -60,7 +60,6 @@ You can reach me by mail or telephone.</p>
               }}
             >           
               {({ isSubmitting }) => (
-                <ScrollableAnchor id={'contact'}>
                   <Form>
                     <Row>
                       <Col sm="6" xs="12">
@@ -89,7 +88,6 @@ You can reach me by mail or telephone.</p>
                       </Col>
                     </Row>
                   </Form>
-                </ScrollableAnchor>
               )}
             </Formik>
           </Row>

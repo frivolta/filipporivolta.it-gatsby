@@ -7,30 +7,30 @@ import BackBar from '../components/commons/backBar';
 
 class Portfolio extends React.Component {
     render() {
+        const item = this.props.data.wordpressAcfPortfolio.acf;
         return (
             <Layout>
                 {console.log("DATA: ", this.props.data)}
                 <BackBar>Torna alla Home page</BackBar>
                 <div className="SingleTitle">
-                    <h1 className="color--secondaryColor">title</h1>
+                    <h1 className="color--secondaryColor">{item.project_title}</h1>
                 </div>
                 <Container>
                     <Row>
                         <Col md="8" xs="12">
-                            <div className="SingleCarousel">
-                                <p>Single image</p>
-                                <p>Single image</p>
+                            <div className="SingleImage">
+                                {item.image_one.localFile.publicURL && <img src={item.image_one.localFile.publicURL} alt={item.project_title}/>}
+                                {item.image_two.localFile.publicURL && <img src={item.image_two.localFile.publicURL} alt={item.project_title}/> }
+                                {item.image_three.localFile.publicURL && <img src={item.image_three.localFile.publicURL} alt={item.project_title}/> }
                             </div>
                         </Col>
                         <Col md="4" xs="12">
                             <div className="SingleMeta">
-                                <h3 className="SingleMeta__title color--gradient">Description</h3>
-                                <p className="SingleMeta__description">desc text</p>
-                                <h4 className="SingleMeta__title color--gradient mt-4 mb-2">Tasks</h4>
-                                <ul className="SingleMeta__char">
-                                    <li>task list</li>
-                                </ul>
-                                <h4 className="SingleMeta__title color--gradient mt-4 mb-3"><small>credits</small></h4>
+                                <h3 className="SingleMeta__title color--gradient">Descrizione</h3>
+                                <p className="SingleMeta__description" dangerouslySetInnerHTML={ { __html : item.description } }/>
+                                <h4 className="SingleMeta__title color--gradient mt-4 mb-2">Task</h4>
+                                <p className="SingleMeta__description" dangerouslySetInnerHTML={ { __html : item.task_list } }/>
+                                <h4 className="SingleMeta__title color--gradient mt-4 mb-3"><small>{item.credits}</small></h4>
                             </div>
                         </Col>
                     </Row>

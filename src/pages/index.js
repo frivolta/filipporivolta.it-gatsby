@@ -7,9 +7,11 @@ import Slider from '../components/containers/slider/slider';
 import ServicesCarousel from '../components/containers/services/services-carousel';
 import DescriptionText from '../components/containers/description-text/DescriptionText';
 import PortfolioCarousel from '../components/containers/portfolio-carousel/PortfolioCarousel';
+import BlogWidget from '../components/containers/blog/blog-widget';
 
 const IndexPage = ({data}) => {
   const { edges: portfolio } = data.allWordpressAcfPortfolio;
+  const { edges: blog } = data.allWordpressPost;
 	return(
 	<Layout>
 		<SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]} />
@@ -22,6 +24,7 @@ const IndexPage = ({data}) => {
 		</DescriptionText>
     {console.log(data)}
     <PortfolioCarousel items={portfolio}/>
+    {/* <BlogWidget items={blog}/> */}
 	</Layout>
 )};
 
@@ -43,6 +46,19 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    allWordpressPost(limit:3) {
+      edges {
+        node {
+          id
+          slug
+          title
+          content
+          excerpt
+          date
+          modified
         }
       }
     }

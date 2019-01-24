@@ -1,4 +1,18 @@
 .SingleImage{
     max-width: 100%;
-    margin-bottom:36px;
+    margin-bottom:72px;
+    margin-top:72px;
+    position: relative;
+    display: block;
+    img{
+        max-width: 100%;
+        padding-top:24px;
+        padding-bottom:24px;
+        &:first-child{
+            padding-top: 0;
+        }
+        &:last-child{
+            padding-bottom: 0;
+        }
+    }
 }
