@@ -14,7 +14,7 @@ const Slider = ()=> (
                     <div className="container__wide__wrapper">
                         <h1 className="Slider__text">
                             <span className="word--wrap word--bold word--gradient">
-                                User interface
+                                Web
                         <span className="text-highlight-gradient-block"></span>
                             </span>
                             design e <br /> frontend development.
