@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
   /* const { edges: blog } = data.allWordpressPost; */
 	return(
 	<Layout>
-		<SEO title="Home" keywords={[ `gatsby`, `application`, `react` ]} />
+		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
 		<Fade bottom>
       <Slider />
     </Fade>

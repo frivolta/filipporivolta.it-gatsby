@@ -9,7 +9,7 @@ const Header = () => (
             <div className="container__wide Header__container">
                 <Logo logoWidth="180" />
                 <div className="Header__right">
-                    <AnchorLink href='#contact'><Button color="primary" className="contact-button d-none d-sm-block" >Contact Me</Button></AnchorLink>
+                    <AnchorLink href='#contact'><Button color="primary" className="contact-button d-none d-sm-block" >Contattami</Button></AnchorLink>
                     {/*<Menu />*/}
                 </div>
             </div>
