@@ -48,7 +48,7 @@ const parameters = {
 		]
 };
 
-const PortfolioCarousel = () => {
+const PortfolioCarousel = ({items}) => {
 		return (
 			<Fade bottom>
 				<div className="Portfolio"  style={{backgroundImage: `url(${Dots})`}}>
@@ -57,13 +57,12 @@ const PortfolioCarousel = () => {
 					</div>
 					<ul>
 						<Slider {...parameters}>
-							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/hp-83f91427b206da3dcf3215feeabf8a5b.jpg"/>
-							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							<PortfolioElement title="Luxo Italia" slug="luxo-italia" image="/static/01-1-4063cd7db43a7d625f501f6e1e40e213.jpg"/>
-							
+							{items.map((item)=> <PortfolioElement
+								 key={item.node.id}
+								 title={item.node.acf.project_title}
+								 slug={item.node.acf.slug}
+								 image={item.node.acf.featured_image.localFile.publicURL}
+							/>)}					
 						</Slider>
 					</ul>
 					<AnchorLink href="#contact">
