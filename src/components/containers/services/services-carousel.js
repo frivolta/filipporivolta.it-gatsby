@@ -27,7 +27,7 @@ const parameters = {
 	responsive:
 		[
 			{
-				breakpoint: 1024,
+				breakpoint: 1250,
 				settings: {
 					slidesToShow: 3,
 				}
@@ -48,6 +48,7 @@ const parameters = {
 				breakpoint: 690,
 				settings: {
 					slidesToShow: 1,
+					centerMode: false,
 				}
 			},
 		]
@@ -56,15 +57,15 @@ const parameters = {
 const ServicesCarousel = () => (
 	<div className="Services" style={{backgroundImage: `url(${Dots})`}}>
 		<Slider {...parameters}>
-			<ServiceElement textField="Consulting and discovery" image={Consulting} />
-			<ServiceElement textField="Custom Design" image={CustomDesign} />
-			<ServiceElement textField="Custom Development" image={CustomDevelopment} />
-			<ServiceElement textField="Content Migrations" image={Migrations} />
-			<ServiceElement textField="Performance & Security" image={BestPerformance} />
-			<ServiceElement textField="Support & Maintenance" image={Support} />
+			<ServiceElement textField="Consulenza e strategia" image={Consulting} />
+			<ServiceElement textField="Design personalizzato" image={CustomDesign} />
+			<ServiceElement textField="Sviluppo personalizzato" image={CustomDevelopment} />
+			<ServiceElement textField="Migrazione dei contenuti" image={Migrations} />
+			<ServiceElement textField="Performance e sicurezza" image={BestPerformance} />
+			<ServiceElement textField="Supporto e manutenzione" image={Support} />
 		</Slider>
 		<AnchorLink href="#contact">
-			<Button className="contact-button btn--gradient slider-button Services__button">Let's get in touch</Button>
+			<Button className="contact-button btn--gradient slider-button Services__button">Contattami</Button>
 		</AnchorLink>
 	</div>
 )

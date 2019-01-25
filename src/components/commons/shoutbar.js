@@ -7,7 +7,7 @@ const ShoutBar = () => (
             <h4 className="color--primary">
                 <span className="color--gradient">[ </span>
                 <AnchorLink href='#contact'>
-                    get started now
+                    Sviluppa ora il tuo progetto
                 </AnchorLink>
                 <span className="color--gradient"> ]</span>
             </h4>

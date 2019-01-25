@@ -23,12 +23,12 @@ const IndexPage = ({data}) => {
     <Fade bottom>
 		  <ServicesCarousel />
     </Fade>
-		<DescriptionText title="I develop digital experiences,
-      products and services" buttonText="Ask for more">
-			My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
-			engaging user interfaces.
+		<DescriptionText title="Sviluppo di esperienze digitali,
+      prodotti e servizi" buttonText="Richiedi maggiori informazioni">
+      Mi chiamo Filippo Rivolta. Ho una grande passione per l' Ui / Ux design e lo sviluppo frontend, realizzo User interface moderne e coinvolgenti prendendomi cura delle performance e dei dettagli del prodotto finale.
+	{/* 		My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
+			engaging user interfaces. */}
 		</DescriptionText>
-    {console.log(data)}
     <PortfolioCarousel items={portfolio}/>
     {/* <BlogWidget items={blog}/> */}
 	</Layout>

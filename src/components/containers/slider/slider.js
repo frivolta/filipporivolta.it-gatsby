@@ -14,12 +14,12 @@ const Slider = ()=> (
                     <div className="container__wide__wrapper">
                         <h1 className="Slider__text">
                             <span className="word--wrap word--bold word--gradient">
-                                Web
+                                User interface
                         <span className="text-highlight-gradient-block"></span>
                             </span>
-                            design and <br /> frontend development.
+                            design e <br /> frontend development.
                     </h1>
-                        <AnchorLink href='#contact'><Button className="contact-button btn--gradient slider-button ">Let's get in touch</Button></AnchorLink>
+                        <AnchorLink href='#contact'><Button className="contact-button btn--gradient slider-button ">Inviami un messaggio</Button></AnchorLink>
                     </div>
                 </div>
             </div>

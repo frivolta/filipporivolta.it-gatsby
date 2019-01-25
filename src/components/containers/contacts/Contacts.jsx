@@ -31,9 +31,8 @@ export default class Contact extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2 className="Contact__title color--gradient">Talk to me</h2>
-              <p className="Contact__text">Fill out all the fields, you will be contacted As Soon As Possible.
-You can reach me by mail or telephone.</p>
+              <h2 className="Contact__title color--gradient">Parla con me</h2>
+              <p className="Contact__text">Compila tutti i campi obbligatori, verrai ricontattato in poco tempo. Puoi cotattarmi anche tramite email o telefono.</p>
 
             </Col>
           </Row>
@@ -43,11 +42,11 @@ You can reach me by mail or telephone.</p>
               validate={values => {
                 let errors = {};
                 if (!values.email || !values.name) {
-                  errors.email = 'Fill out all required fields';
+                  errors.email = 'Per favore, compila tutti i campi';
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = 'Invalid email address';
+                  errors.email = 'Indirizzo email non valido';
                 }
                 return errors;
               }}
@@ -63,7 +62,7 @@ You can reach me by mail or telephone.</p>
                   <Form>
                     <Row>
                       <Col sm="6" xs="12">
-                        <Field type="input" name="name" className="input-field" placeholder="Name *" />
+                        <Field type="input" name="name" className="input-field" placeholder="Nome *" />
                       </Col>
                       <Col sm="6" xs="12">
                         <Field type="email" name="email" className="input-field" placeholder="Email *" />
@@ -71,7 +70,7 @@ You can reach me by mail or telephone.</p>
                     </Row>
                     <Row>
                       <Col sm="12">
-                        <Field component="textarea" rows="7" type="textarea" name="textarea" className="input-field" placeholder="How can I help you with..." />
+                        <Field component="textarea" rows="7" type="textarea" name="textarea" className="input-field" placeholder="Come posso aiutarti..." />
                       </Col>
                     </Row>
                     <Row>
@@ -84,7 +83,7 @@ You can reach me by mail or telephone.</p>
                     </Row>
                     <Row>
                       <Col>
-                        <Button type="submit" disabled={isSubmitting} className="contact-button btn--gradient slider-button Services__button">Send Now!</Button>
+                        <Button type="submit" disabled={isSubmitting} className="contact-button btn--gradient slider-button Services__button">Invia il messaggio!</Button>
                       </Col>
                     </Row>
                   </Form>
@@ -97,8 +96,8 @@ You can reach me by mail or telephone.</p>
         <Container>
           <Row>
             <Col>
-              <h2 className="Contact__title color--gradient">Thank you, your message has been sent!</h2>
-              <p className="Contact__text">You will be contacted As Soon As Possible. You can still reach me by mail or telephone.</p>
+              <h2 className="Contact__title color--gradient">Grazie il tuo messaggio è stato inviato!</h2>
+              <p className="Contact__text">Sarai contattato il prima possibile, puoi metterti ancora in contatto con me mandandomi una mail o telefonandomi!</p>
             </Col>
           </Row>    
         </Container>
