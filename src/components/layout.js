@@ -7,22 +7,29 @@ import Header from './containers/header'
 import '../styles/main.scss'
 import ShoutBar from './commons/shoutbar';
 import ReactGA from 'react-ga';
-ReactGA.initialize('UA-133277122-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
 
-const Layout = ({ children }) => (
-  <div>
-    <header>
-      <Header />
-    </header>
-    <ShoutBar />
-    {children}
-    <Contact/>
-    <footer>
-      <Footer />
-    </footer>
-  </div>
-)
+
+class Layout extends React.Component {
+  componentDidMount() {
+    ReactGA.initialize('UA-133277122-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
+  render() {
+    return (
+      <div>
+        <header>
+          <Header />
+        </header>
+        <ShoutBar />
+        {this.props.children}
+        <Contact />
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    )
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
