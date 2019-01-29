@@ -15,7 +15,6 @@ class Blog extends React.Component {
         <Container>
           <Row>
             <Col xs="12" sm="12" className="Posts">
-            <PulsingButton/>
 
               {this.props.data.allWordpressPost.edges.map((post)=>(
                 <BlogItem post={post}/>
