@@ -9,6 +9,7 @@ class Blog extends React.Component {
   render() {
     return (
       <Layout>
+        		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} description="Filippo Rivolta, blog dedicato allo sviluppo e al web moderno. Applicazioni, siti web e consulenza. 3347001377"/>
         <Container>
           <Row>
             <Col xs="12" sm="12" className="Posts">

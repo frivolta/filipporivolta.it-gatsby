@@ -12,6 +12,7 @@ class Portfolio extends React.Component {
         const item = this.props.data.wordpressAcfPortfolio.acf;
         return (
             <Layout>
+                <SEO title={item.project_title} keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} description={item.meta_description} />
                 {console.log("DATA: ", this.props.data)}
                 <BackBar>Torna alla Home page</BackBar>
                 <div className="SingleTitle">
@@ -53,6 +54,7 @@ export const portfolioQuery = graphql
       id
       acf {
             slug
+            meta_description
             project_title
             description
             task_list

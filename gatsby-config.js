@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Filippo Rivolta, Web Design e frontend development`,
-    description: `Mi chiamo Filippo Rivolta. Ho una grande passione per l' Ui / Ux design e lo sviluppo frontend, realizzo soluzioni web moderne e coinvolgenti.`,
+    description: `Filippo Rivolta, Ui / Ux design sviluppo frontend: soluzioni web moderne e coinvolgenti. Applicazioni, siti web e consulenza: 3347001377`,
     author: `Filippo Rivolta`,
   },
   plugins: [
