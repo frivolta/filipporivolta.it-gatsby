@@ -4,6 +4,8 @@ import { Container, Row, Col } from 'reactstrap';
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import BlogItem from '../components/containers/blog/blog-item';
+import PulsingButton from '../components/commons/pulsingButton';
+
 
 class Blog extends React.Component {
   render() {
@@ -13,6 +15,8 @@ class Blog extends React.Component {
         <Container>
           <Row>
             <Col xs="12" sm="12" className="Posts">
+            <PulsingButton/>
+
               {this.props.data.allWordpressPost.edges.map((post)=>(
                 <BlogItem post={post}/>
               ))}

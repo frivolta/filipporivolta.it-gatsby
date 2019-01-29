@@ -1,0 +1,16 @@
+/*---CLASSES---*/
+
+.icl-Button--pulse {
+    animation: button-pulse 2s infinite cubic-bezier(.66, 0, 0, 1);
+    box-shadow: 0 0 0 0 rgba($altColor, .75) !important;
+    
+    &:hover {
+      animation: none;
+    }
+  }
+  
+  @keyframes button-pulse {
+    to {
+      box-shadow: 0 0 10px 15px rgba($altColor, 0);
+    }
+  }
