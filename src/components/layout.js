@@ -6,13 +6,13 @@ import Contact from '../components/containers/contacts/Contacts'
 import Header from './containers/header'
 import '../styles/main.scss'
 import ShoutBar from './commons/shoutbar';
-import ReactGA from 'react-ga';
+//import ReactGA from 'react-ga';
 
 
 class Layout extends React.Component {
   componentDidMount() {
-    ReactGA.initialize('UA-133277122-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    //ReactGA.initialize('UA-133277122-1');
+    //ReactGA.pageview(window.location.pathname + window.location.search);
   }
   render() {
     return (
