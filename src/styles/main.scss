@@ -7,6 +7,7 @@ $secondaryColorAlpha: rgba(255,255,255, .8);
 $gradientColor: #F05A28,#E80A89;
 $secondGradientColor: #222222, #3E3443;
 $altColor: #F05A28;
+$lowContrast: #8a8a8a;
 
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,300,400,600,700');
@@ -42,6 +43,9 @@ body {
   }
   &--secondaryColor {
     color: $secondaryColor;
+  }
+  &--low-contrast{
+    color: $lowContrast;
   }
 }
 
@@ -203,3 +207,4 @@ ul, li{
 @import 'Blog';
 @import 'NotFoundPage';
 @import 'PulsingButton';
+@import 'ProfileImage';

@@ -5,7 +5,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
 
-
 const DescriptionText = ({title, children, buttonText}) => (
     <Fade bottom>
         <div className="About">

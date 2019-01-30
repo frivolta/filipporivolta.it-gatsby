@@ -1,0 +1,13 @@
+.ProfileImage{
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: $altPrimaryColor;
+    box-shadow: -2px 30px 40px 0 rgba(0, 0, 0, 0.70);
+    margin: 72px 72px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

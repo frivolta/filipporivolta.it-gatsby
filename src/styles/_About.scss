@@ -19,3 +19,19 @@
         margin-bottom: 42px;
     }
 }
+.AboutColumn{
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+    @include respond-below(md) {
+        max-width: 80%;
+    }
+    @include respond-below(sm) {
+        max-width: 100%;
+    }
+}
+.Profile{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
