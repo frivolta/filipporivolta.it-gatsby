@@ -7,6 +7,7 @@ module.exports = {
     title: `Filippo Rivolta, Web Design e frontend development`,
     description: `Filippo Rivolta, Ui / Ux design sviluppo frontend: soluzioni web moderne e coinvolgenti. Applicazioni, siti web e consulenza: 3347001377`,
     author: `Filippo Rivolta`,
+    siteUrl: `https://www.filipporivolta.it`,
   },
   plugins: [
     {
@@ -46,6 +47,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
