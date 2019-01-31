@@ -14,7 +14,7 @@ export default class Contact extends React.Component {
     }
   }
   formSubmitHandler = (email,name,message) => {
-    fetch('http://68.183.75.94/wp-json/contact-form-7/v1/contact-forms/34/feedback', {
+    fetch('https://www.filipporivolta.com/wp-json/contact-form-7/v1/contact-forms/34/feedback', {
       method: 'post',
       body: `your-name=${name}&your-email=${email}&your-message=${message}`,
       headers: { 'Content-type': 'application/x-www-form-urlencoded' }
@@ -32,8 +32,7 @@ export default class Contact extends React.Component {
           <Row>
             <Col>
               <h2 className="Contact__title color--gradient">Parla con me</h2>
-              <p className="Contact__text">Compila tutti i campi obbligatori, verrai ricontattato in poco tempo. Puoi cotattarmi anche tramite email o telefono.</p>
-
+              <p className="Contact__text">Compila tutti i campi obbligatori, verrai ricontattato in poco tempo. Puoi cotattarmi anche tramite email o telefono.</p>s
             </Col>
           </Row>
           <Row>
