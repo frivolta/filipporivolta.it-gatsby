@@ -17,6 +17,7 @@
     "gatsby-plugin-netlify-cms": "^3.0.9",
     "gatsby-plugin-offline": "^2.0.22",
     "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-plugin-sitemap": "^2.0.4",
