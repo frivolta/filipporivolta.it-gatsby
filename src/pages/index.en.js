@@ -12,7 +12,7 @@ import Fade from 'react-reveal/Fade';
 
 
 const IndexPage = ({data}) => {
-  const lang = "it"
+  const lang = "en"
   const { edges: portfolio } = data.allWordpressAcfPortfolio;
   const localePortfolio = portfolio.filter(item => item.node.acf.language===lang);
   /* const { edges: blog } = data.allWordpressPost; */
@@ -31,7 +31,7 @@ const IndexPage = ({data}) => {
 	{/* 		My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
 			engaging user interfaces. */}
 		</DescriptionText>
-    <PortfolioCarousel items={localePortfolio} locale=""/>
+    <PortfolioCarousel items={localePortfolio} locale="/en/"/>
     {/* <BlogWidget items={blog}/> */}
 	</Layout>
 )};
@@ -43,6 +43,7 @@ export const pageQuery = graphql`
         node {
           id
           acf {
+            language
             slug
             project_title
             featured_image {
@@ -53,7 +54,6 @@ export const pageQuery = graphql`
                 publicURL
               }
             }
-            language
           }
         }
       }

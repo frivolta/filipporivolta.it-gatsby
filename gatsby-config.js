@@ -124,5 +124,14 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
+    //Starting internationalization
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {        
+        langKeyDefault: 'it',
+        langs: ['it', 'en'],
+        useLangKeyLayout: false
+      }
+    },
   ],
 }

@@ -48,7 +48,8 @@ const parameters = {
 		]
 };
 
-const PortfolioCarousel = ({items}) => {
+const PortfolioCarousel = ({items, locale}) => {
+
 		return (
 			<Fade bottom>
 				<div className="Portfolio"  style={{backgroundImage: `url(${Dots})`}}>
@@ -60,7 +61,7 @@ const PortfolioCarousel = ({items}) => {
 							{items.map((item)=> <PortfolioElement
 								 key={item.node.id}
 								 title={item.node.acf.project_title}
-								 slug={item.node.acf.slug}
+								 slug={`${locale}${item.node.acf.slug}`}
 								 image={item.node.acf.featured_image.localFile.publicURL}
 							/>)}					
 						</Slider>

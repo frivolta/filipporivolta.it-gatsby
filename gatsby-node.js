@@ -2,8 +2,12 @@ const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const {
+  createFilePath
+} = require('gatsby-source-filesystem')
+const {
+  fmImagesToRelative
+} = require('gatsby-remark-relative-images')
 
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
@@ -11,13 +15,18 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 // create pages.
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = ({
+  graphql,
+  actions
+}) => {
+  const {
+    createPage
+  } = actions
 
   return new Promise((resolve, reject) => {
     // ==== PAGES (WORDPRESS NATIVE) ====
     graphql(
-      `
+        `
         {
           allWordpressPage {
             edges {
@@ -31,7 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       `
-    )
+      )
       .then(result => {
         if (result.errors) {
           console.log(result.errors)
@@ -108,6 +117,7 @@ exports.createPages = ({ graphql, actions }) => {
                   id
                   acf {
                     slug
+                    language
                   }
                 }
               }
@@ -119,19 +129,32 @@ exports.createPages = ({ graphql, actions }) => {
             console.log(result.errors)
             reject(result.errors)
           }
-          const postTemplate = path.resolve("./src/templates/portfolio.js")
+          console.log(result)
+          const postTemplateIt = path.resolve("./src/templates/portfolio.js")
+          const postTemplateEn = path.resolve("./src/templates/portfolio.js")
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
           _.each(result.data.allWordpressAcfPortfolio.edges, edge => {
-            createPage({
-              path: `portfolio/${edge.node.acf.slug}/`,
-              component: slash(postTemplate),
-              context: {
-                id: edge.node.id,
-                slug: edge.node.acf.slug
-              },
-            })
+            if (edge.node.acf.language === "it") {
+              createPage({
+                path: `portfolio/${edge.node.acf.slug}/`,
+                component: slash(postTemplateIt),
+                context: {
+                  id: edge.node.id,
+                  slug: edge.node.acf.slug
+                },
+              })
+            } else {
+              createPage({
+                path: `portfolio/en/${edge.node.acf.slug}/`,
+                component: slash(postTemplateEn),
+                context: {
+                  id: edge.node.id,
+                  slug: edge.node.acf.slug
+                },
+              })
+            }
           })
           resolve()
         })
@@ -139,8 +162,5 @@ exports.createPages = ({ graphql, actions }) => {
     // ==== END POSTS ====
   })
 
-  
+
 }
-
-
-
