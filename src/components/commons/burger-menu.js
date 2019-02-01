@@ -23,7 +23,8 @@ class BurgerMenu extends Component {
                 <div id="menu" onClick={this.handleOpenClose} className={this.state.status ? 'overlay' : ''}>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="about">About Us</a></li>
+                        <li><a href="/blog">Blog</a></li>   
+                        <li><a href="/about">Chi Sono</a></li>
                     </ul>
                 </div>
             </div>
