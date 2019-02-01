@@ -119,8 +119,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.example.com',
-        sitemap: 'https://www.example.com/sitemap.xml',
+        host: 'https://www.filipporivolta.it',
+        sitemap: 'https://www.filipporivolta.it/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
