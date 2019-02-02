@@ -147,7 +147,7 @@ exports.createPages = ({
               })
             } else {
               createPage({
-                path: `portfolio/en/${edge.node.acf.slug}/`,
+                path: `en/portfolio/${edge.node.acf.slug}/`,
                 component: slash(postTemplateEn),
                 context: {
                   id: edge.node.id,
