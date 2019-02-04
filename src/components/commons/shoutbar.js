@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-const ShoutBar = () => (
+const ShoutBar = ({callToAction}) => (
     <div className="ShoutBar">
         <div className="ShoutBar__cta">
             <h4 className="color--primary">
                 <span className="color--gradient">[ </span>
                 <AnchorLink href='#contact'>
-                    Sviluppa ora il tuo progetto
+                    {callToAction}
                 </AnchorLink>
                 <span className="color--gradient"> ]</span>
             </h4>
@@ -23,4 +24,7 @@ const ShoutBar = () => (
         </h4>
     </div>
 )
+ShoutBar.propTypes = {
+    callToAction: PropTypes.string
+}
 export default ShoutBar;

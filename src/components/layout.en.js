@@ -1,30 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Footer from './containers/footer/Footer'
-//import { StaticQuery, graphql } from 'gatsby'
-import Contact from '../components/containers/contacts/Contacts'
+import Contact from '../components/containers/contacts/Contacts.en'
 import Header from './containers/header'
 import '../styles/main.scss'
 import ShoutBar from './commons/shoutbar';
-//import ReactGA from 'react-ga';
 
 
 class Layout extends React.Component {
-  componentDidMount() {
-    //ReactGA.initialize('UA-133277122-1');
-    //ReactGA.pageview(window.location.pathname + window.location.search);
-  }
   render() {
     return (
       <div>
         <header>
-          <Header locale="it" callToAction="Contattami"/>
+          <Header locale="en" callToAction="Contact Me"/>
         </header>
-          <ShoutBar callToAction="Sviluppa ora il tuo progetto"/>
+        <ShoutBar callToAction="GET STARTED NOW"/>
         {this.props.children}
         <Contact />
         <footer>
-          <Footer locale="it"/>
+          <Footer locale="en"/>
         </footer>
       </div>
     )

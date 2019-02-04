@@ -1,18 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import { Logo } from './../commons/logo'
-import {Link} from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import InstagramImg from '../../images/social/instagram.svg'
 /* import BurgerMenu from '../commons/burger-menu';
  */
-const Header = () => (
+const Header = ({locale, callToAction}) => (
     <React.Fragment>
         <div className="Header">
             <div className="container__wide Header__container">
-                <Logo logoWidth="180" />
+                <Logo logoWidth="180" locale={locale}/>
                 <div className="Header__right">
-                    <AnchorLink href='#contact'><Button color="primary" className="contact-button d-none d-sm-block" >Contattami</Button></AnchorLink>
+                    <AnchorLink href='#contact'><Button color="primary" className="contact-button d-none d-sm-block" >{callToAction}</Button></AnchorLink>
                     {/* <BurgerMenu/> */}
                     <a href="https://www.instagram.com/filippo_dot_it/" target="_blank">
                         <img className="social-button" src={InstagramImg} alt="Instagram Filippo Rivolta Social"/>
@@ -23,5 +23,10 @@ const Header = () => (
         <div className="Header__padding"></div>
     </React.Fragment>
 )
+
+Header.propTypes = {
+    locale: PropTypes.string.isRequired,
+    callToAction: PropTypes.string
+}
 
 export default Header

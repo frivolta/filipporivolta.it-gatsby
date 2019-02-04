@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import Divider from '../../commons/divider';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button } from 'reactstrap';
-import ScrollableAnchor from 'react-scrollable-anchor'
 
 
 export default class Contact extends React.Component {
@@ -31,8 +30,8 @@ export default class Contact extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2 className="Contact__title color--gradient">Parla con me</h2>
-              <p className="Contact__text">Compila tutti i campi obbligatori, verrai ricontattato in poco tempo. Puoi cotattarmi anche tramite email o telefono.</p>
+              <h2 className="Contact__title color--gradient">Talk to me</h2>
+              <p className="Contact__text">Please fill in all required fields, I will get back to you ASAP. You can contact me by mail or phone too!</p>s
             </Col>
           </Row>
           <Row>
@@ -41,11 +40,11 @@ export default class Contact extends React.Component {
               validate={values => {
                 let errors = {};
                 if (!values.email || !values.name) {
-                  errors.email = 'Per favore, compila tutti i campi';
+                  errors.email = 'Please fill in all fields';
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = 'Indirizzo email non valido';
+                  errors.email = 'Email address not valid';
                 }
                 return errors;
               }}
@@ -61,7 +60,7 @@ export default class Contact extends React.Component {
                   <Form>
                     <Row>
                       <Col sm="6" xs="12">
-                        <Field type="input" name="name" className="input-field" placeholder="Nome *" />
+                        <Field type="input" name="name" className="input-field" placeholder="Name *" />
                       </Col>
                       <Col sm="6" xs="12">
                         <Field type="email" name="email" className="input-field" placeholder="Email *" />
@@ -69,7 +68,7 @@ export default class Contact extends React.Component {
                     </Row>
                     <Row>
                       <Col sm="12">
-                        <Field component="textarea" rows="7" type="textarea" name="textarea" className="input-field" placeholder="Come posso aiutarti..." />
+                        <Field component="textarea" rows="7" type="textarea" name="textarea" className="input-field" placeholder="How can I help you..." />
                       </Col>
                     </Row>
                     <Row>
@@ -82,7 +81,7 @@ export default class Contact extends React.Component {
                     </Row>
                     <Row>
                       <Col>
-                        <Button type="submit" disabled={isSubmitting} className="contact-button btn--gradient slider-button Services__button">Invia il messaggio!</Button>
+                        <Button type="submit" disabled={isSubmitting} className="contact-button btn--gradient slider-button Services__button">Send message!</Button>
                       </Col>
                     </Row>
                   </Form>
@@ -95,8 +94,8 @@ export default class Contact extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2 className="Contact__title color--gradient">Grazie il tuo messaggio è stato inviato!</h2>
-              <p className="Contact__text">Sarai contattato il prima possibile, puoi metterti ancora in contatto con me mandandomi una mail o telefonandomi!</p>
+              <h2 className="Contact__title color--gradient">Thanks, your message have been sent!</h2>
+              <p className="Contact__text">I will get back to you as soon as possible, you can still reach me by mail or phone!</p>
             </Col>
           </Row>    
         </Container>

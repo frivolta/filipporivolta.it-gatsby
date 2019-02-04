@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PortfolioElement from './PortfolioElement';
 import Fade from 'react-reveal/Fade';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -48,13 +49,13 @@ const parameters = {
 		]
 };
 
-const PortfolioCarousel = ({items, locale}) => {
+const PortfolioCarousel = ({items, locale, title, callToAction}) => {
 
 		return (
 			<Fade bottom>
 				<div className="Portfolio"  style={{backgroundImage: `url(${Dots})`}}>
 					<div className="Portfolio__title">
-						<h4 className="color--gradient text--spacing">LAVORI</h4>
+						<h4 className="color--gradient text--spacing">{title}</h4>
 					</div>
 					<ul>
 						<Slider {...parameters}>
@@ -68,12 +69,19 @@ const PortfolioCarousel = ({items, locale}) => {
 					</ul>
 					<AnchorLink href="#contact">
 						<Button className="contact-button btn--gradient slider-button Services__button">
-							Contattami ora
+							{callToAction}
 						</Button>
 					</AnchorLink>
 				</div>
 			</Fade>
 		);
+}
+
+PortfolioCarousel.propTypes = {
+	items: PropTypes.array,
+	locale: PropTypes.string,
+	title: PropTypes.string,
+	callToAction: PropTypes.string
 }
 
 export default PortfolioCarousel;
