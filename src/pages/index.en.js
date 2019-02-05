@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Link } from 'gatsby'
 import {graphql} from 'gatsby';
-import Layout from '../components/layout.en';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Slider from '../components/containers/slider/slider';
 import ServicesCarousel from '../components/containers/services/services-carousel.en';
@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
   const localePortfolio = portfolio.filter(item => item.node.acf.language===lang);
   /* const { edges: blog } = data.allWordpressPost; */
 	return(
-	<Layout>
+	<Layout locale="en">
 		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
 		<Fade bottom>
       <Slider callToAction="Send me a message">

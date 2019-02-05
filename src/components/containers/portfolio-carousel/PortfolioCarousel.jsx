@@ -62,7 +62,8 @@ const PortfolioCarousel = ({items, locale, title, callToAction}) => {
 							{items.map((item)=> <PortfolioElement
 								 key={item.node.id}
 								 title={item.node.acf.project_title}
-								 slug={`${locale}${item.node.acf.slug}`}
+								 slug={item.node.acf.slug}
+								 locale={locale}
 								 image={item.node.acf.featured_image.localFile.publicURL}
 							/>)}					
 						</Slider>

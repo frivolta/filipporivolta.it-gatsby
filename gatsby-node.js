@@ -129,9 +129,7 @@ exports.createPages = ({
             console.log(result.errors)
             reject(result.errors)
           }
-          console.log(result)
-          const postTemplateIt = path.resolve("./src/templates/portfolio.js")
-          const postTemplateEn = path.resolve("./src/templates/portfolio.js")
+          const portfolioTemplate = path.resolve("./src/templates/portfolio.js")
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
@@ -139,19 +137,21 @@ exports.createPages = ({
             if (edge.node.acf.language === "it") {
               createPage({
                 path: `portfolio/${edge.node.acf.slug}/`,
-                component: slash(postTemplateIt),
+                component: slash(portfolioTemplate),
                 context: {
                   id: edge.node.id,
-                  slug: edge.node.acf.slug
+                  slug: edge.node.acf.slug,
+                  locale: "it",
                 },
               })
             } else {
               createPage({
                 path: `en/portfolio/${edge.node.acf.slug}/`,
-                component: slash(postTemplateEn),
+                component: slash(portfolioTemplate),
                 context: {
                   id: edge.node.id,
-                  slug: edge.node.acf.slug
+                  slug: edge.node.acf.slug,
+                  locale: "en",
                 },
               })
             }

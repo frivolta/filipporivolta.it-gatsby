@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Container, Row, Col } from 'reactstrap';
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -10,11 +10,17 @@ import Fade from 'react-reveal/Fade';
 class Portfolio extends React.Component {
     render() {
         const item = this.props.data.wordpressAcfPortfolio.acf;
+        const locale = this.props.pageContext.locale;
+        const strings = {
+            backBar: {
+                it: "Torna alla Home page",
+                en: "Back to the Home Page"
+            }
+        } 
         return (
-            <Layout>
+            <Layout locale={locale}>
                 <SEO title={item.project_title} keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} description={item.meta_description} />
-                {console.log("DATA: ", this.props.data)}
-                <BackBar>Torna alla Home page</BackBar>
+                <BackBar locale={locale}>{locale === 'en' ? strings.backBar.en : strings.backBar.it}</BackBar>
                 <div className="SingleTitle">
                     <h1 className="color--secondaryColor">{item.project_title}</h1>
                 </div>
@@ -40,7 +46,7 @@ class Portfolio extends React.Component {
                         </Row>
                     </Fade>
                 </Container>
-                <BackBar>Torna alla Home page</BackBar>
+                <BackBar locale={locale}>{locale === 'en' ? strings.backBar.en : strings.backBar.it}</BackBar>
             </Layout>
         )
     }

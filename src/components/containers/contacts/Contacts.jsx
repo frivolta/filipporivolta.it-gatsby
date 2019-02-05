@@ -23,6 +23,55 @@ export default class Contact extends React.Component {
   }
 
   render() {
+    const {locale} = this.props;
+    const strings = {
+      title: {
+          it: "Parla con me",
+          en: "Talk to me"
+      },
+      description: {
+        it: "Compila tutti i campi obbligatori, verrai ricontattato in poco tempo. Puoi cotattarmi anche tramite email o telefono.",
+        en: "Please fill in all required fields, I will get back to you ASAP. You can contact me by mail or phone too!"
+      },
+      errors: {
+        email: {
+          it:"Indirizzo email non valido",
+          en:"Email address not valid"
+        },
+        fields: {
+          it:"Per favore, compila tutti i campi",
+          en:"Please fill in all fields"
+        }
+      },
+      placehodlers: {
+        email: {
+          it:"Email *",
+          en:"Email *"
+        },
+        name: {
+          it:"Nome *",
+          en:"Name *"
+        },
+        message: {
+          it:"Come posso aiutarti...",
+          en:"How can I help you with..."
+        }
+      },
+      sendButton: {
+        it: "Invia il messaggio!",
+        en: "Send message!"
+      },
+      messageSent: {
+        title: {
+          it:"Grazie il tuo messaggio è stato inviato!",
+          en:"Thanks, your message have been sent!"
+        },
+        message: {
+          it:"Sarai contattato il prima possibile, puoi metterti ancora in contatto con me mandandomi una mail o telefonandomi!",
+          en:"I will get back to you as soon as possible, you can still reach me by mail or phone!"
+        }
+      } 
+    } 
     return (
         <div className="Contact" id={'contact'}>
         
@@ -31,8 +80,8 @@ export default class Contact extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2 className="Contact__title color--gradient">Parla con me</h2>
-              <p className="Contact__text">Compila tutti i campi obbligatori, verrai ricontattato in poco tempo. Puoi cotattarmi anche tramite email o telefono.</p>
+              <h2 className="Contact__title color--gradient">{locale === 'en' ? strings.title.en : strings.title.it}</h2>
+              <p className="Contact__text">{locale === 'en' ? strings.description.en : strings.description.it}</p>
             </Col>
           </Row>
           <Row>
@@ -41,11 +90,11 @@ export default class Contact extends React.Component {
               validate={values => {
                 let errors = {};
                 if (!values.email || !values.name) {
-                  errors.email = 'Per favore, compila tutti i campi';
+                  errors.email = (locale === 'en' ? strings.errors.fields.en : strings.errors.fields.it);
                 } else if (
                   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
                 ) {
-                  errors.email = 'Indirizzo email non valido';
+                  errors.email = (locale === 'en' ? strings.errors.email.en : strings.errors.email.it);
                 }
                 return errors;
               }}
@@ -61,15 +110,15 @@ export default class Contact extends React.Component {
                   <Form>
                     <Row>
                       <Col sm="6" xs="12">
-                        <Field type="input" name="name" className="input-field" placeholder="Nome *" />
+                        <Field type="input" name="name" className="input-field" placeholder={locale === 'en' ? strings.placehodlers.name.en : strings.placehodlers.name.it}/>
                       </Col>
                       <Col sm="6" xs="12">
-                        <Field type="email" name="email" className="input-field" placeholder="Email *" />
+                        <Field type="email" name="email" className="input-field" placeholder={locale === 'en' ? strings.placehodlers.email.en : strings.placehodlers.email.it} />
                       </Col>
                     </Row>
                     <Row>
                       <Col sm="12">
-                        <Field component="textarea" rows="7" type="textarea" name="textarea" className="input-field" placeholder="Come posso aiutarti..." />
+                        <Field component="textarea" rows="7" type="textarea" name="textarea" className="input-field" placeholder={locale === 'en' ? strings.placehodlers.message.en : strings.placehodlers.message.it} />
                       </Col>
                     </Row>
                     <Row>
@@ -82,7 +131,7 @@ export default class Contact extends React.Component {
                     </Row>
                     <Row>
                       <Col>
-                        <Button type="submit" disabled={isSubmitting} className="contact-button btn--gradient slider-button Services__button">Invia il messaggio!</Button>
+                        <Button type="submit" disabled={isSubmitting} className="contact-button btn--gradient slider-button Services__button">{locale === 'en' ? strings.sendButton.en : strings.sendButton.it}</Button>
                       </Col>
                     </Row>
                   </Form>
@@ -95,8 +144,8 @@ export default class Contact extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2 className="Contact__title color--gradient">Grazie il tuo messaggio è stato inviato!</h2>
-              <p className="Contact__text">Sarai contattato il prima possibile, puoi metterti ancora in contatto con me mandandomi una mail o telefonandomi!</p>
+              <h2 className="Contact__title color--gradient">{locale === 'en' ? strings.messageSent.title.en : strings.messageSent.title.it}</h2>
+              <p className="Contact__text">{locale === 'en' ? strings.messageSent.message.en : strings.messageSent.message.it}</p>
             </Col>
           </Row>    
         </Container>
