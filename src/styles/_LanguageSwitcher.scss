@@ -1,0 +1,20 @@
+.language-switcher {
+    display: block;
+    position: relative;
+    background-color: $altPrimaryColor;
+    border-radius: 5px;
+    box-shadow: -2px 3px 30px 0 rgba(0, 0, 0, 0.70);
+    a {
+        letter-spacing: 2px;
+        &:hover{
+            color: $altColor;
+        }
+        font-size: 12px;
+        display: block;
+        padding: 5px 10px;
+            &.language-switcher--active {
+                display: none;
+            }
+        color: white
+    }
+}

@@ -10,29 +10,48 @@ import ShoutBar from './commons/shoutbar';
 
 
 class Layout extends React.Component {
-  componentDidMount() {
-    //ReactGA.initialize('UA-133277122-1');
-    //ReactGA.pageview(window.location.pathname + window.location.search);
-  }
   render() {
+    const {locale} = this.props;
+    const renderLayout = (locale) => {
+      if (locale==='en'){
+        return(
+          <div>
+            <header>
+              <Header locale="en" callToAction="Contact Me"/>
+            </header>
+            <ShoutBar callToAction="GET STARTED NOW"/>
+            {this.props.children}
+            <Contact locale="en"/>
+            <footer>
+              <Footer locale="en"/>
+            </footer>
+          </div>
+        )
+      } else {
+        return(
+          <div>
+            <header>
+              <Header locale="it" callToAction="Contattami"/>
+            </header>
+              <ShoutBar callToAction="Sviluppa ora il tuo progetto"/>
+            {this.props.children}
+            <Contact locale="it"/>
+            <footer>
+              <Footer locale="it"/>
+            </footer>
+          </div>
+        )
+      }
+    }
     return (
-      <div>
-        <header>
-          <Header />
-        </header>
-        <ShoutBar />
-        {this.props.children}
-        <Contact />
-        <footer>
-          <Footer />
-        </footer>
-      </div>
+      renderLayout(locale)
     )
   }
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  locale: PropTypes.string.isRequired
 }
 
 export default Layout

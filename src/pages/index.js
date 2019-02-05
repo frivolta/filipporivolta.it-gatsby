@@ -20,7 +20,13 @@ const IndexPage = ({data}) => {
 	<Layout>
 		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
 		<Fade bottom>
-      <Slider />
+    <Slider callToAction="Inviami un messaggio">
+      <span className="word--wrap word--bold word--gradient">
+        Web
+        <span className="text-highlight-gradient-block"></span>
+      </span>
+        design e <br /> Front-end Development.
+    </Slider>
     </Fade>
     <Fade bottom>
 		  <ServicesCarousel />
@@ -31,7 +37,7 @@ const IndexPage = ({data}) => {
 	{/* 		My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
 			engaging user interfaces. */}
 		</DescriptionText>
-    <PortfolioCarousel items={localePortfolio} locale=""/>
+    <PortfolioCarousel items={localePortfolio} title="Lavori" locale="" callToAction="Contattami Ora"/>
     {/* <BlogWidget items={blog}/> */}
 	</Layout>
 )};

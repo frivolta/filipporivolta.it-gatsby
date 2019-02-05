@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from "gatsby"
 
-const PortfolioElement = ({ slug, title, image }) => (
+const PortfolioElement = ({ locale, slug, title, image }) => (
 	<div className="PortfolioElement">
 		<div className="PortfolioElement__container">
-			<Link to={`/portfolio/${slug}`}>
+			<Link to={`${locale}/portfolio/${slug}`}>
 				<div className="PortfolioElement__text">
 					<h3 className="color--gradient">{title}</h3>
 				</div>

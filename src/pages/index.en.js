@@ -4,7 +4,7 @@ import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Slider from '../components/containers/slider/slider';
-import ServicesCarousel from '../components/containers/services/services-carousel';
+import ServicesCarousel from '../components/containers/services/services-carousel.en';
 import DescriptionText from '../components/containers/description-text/DescriptionText';
 import PortfolioCarousel from '../components/containers/portfolio-carousel/PortfolioCarousel';
 /* import BlogWidget from '../components/containers/blog/blog-widget'; */
@@ -17,21 +17,26 @@ const IndexPage = ({data}) => {
   const localePortfolio = portfolio.filter(item => item.node.acf.language===lang);
   /* const { edges: blog } = data.allWordpressPost; */
 	return(
-	<Layout>
+	<Layout locale="en">
 		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
 		<Fade bottom>
-      <Slider />
+      <Slider callToAction="Send me a message">
+        <span className="word--wrap word--bold word--gradient">
+          Web
+          <span className="text-highlight-gradient-block"></span>
+        </span>
+          design and <br /> Front-end Development.
+      </Slider>
     </Fade>
     <Fade bottom>
 		  <ServicesCarousel />
     </Fade>
-		<DescriptionText title="Sviluppo di esperienze digitali,
-      prodotti e servizi" buttonText="Richiedi maggiori informazioni">
-      Mi chiamo Filippo Rivolta. Ho una grande passione per l' Ui / Ux design e lo sviluppo frontend, realizzo User interface moderne e coinvolgenti prendendomi cura delle performance e dei dettagli del prodotto finale.
-	{/* 		My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
-			engaging user interfaces. */}
+		<DescriptionText title="I develop digital experiences,
+      products and services" buttonText="Ask for more">
+			My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
+			engaging user interfaces.
 		</DescriptionText>
-    <PortfolioCarousel items={localePortfolio} locale="/en/"/>
+    <PortfolioCarousel items={localePortfolio} title="Works" locale="/en/" callToAction="Contact me now"/>
     {/* <BlogWidget items={blog}/> */}
 	</Layout>
 )};
