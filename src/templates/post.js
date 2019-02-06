@@ -8,7 +8,7 @@ class Post extends React.Component {
   render() {
     const post = this.props.data.wordpressPost
     return (
-      <Layout>
+      <Layout background="white" locale={post.acf.language}>
         <Container>
           <Row>
             <Col xs="12" sm="8" className="Blog__content">
@@ -27,6 +27,21 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+    	
+      author {
+        name
+        description
+        id
+      }
+    	featured_media {
+    	  id
+        localFile{
+          publicURL
+        }
+    	}
+      acf {
+        language
+      }
     }
   }
 `

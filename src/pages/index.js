@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Link } from 'gatsby'
 import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -7,7 +6,7 @@ import Slider from '../components/containers/slider/slider';
 import ServicesCarousel from '../components/containers/services/services-carousel';
 import DescriptionText from '../components/containers/description-text/DescriptionText';
 import PortfolioCarousel from '../components/containers/portfolio-carousel/PortfolioCarousel';
-/* import BlogWidget from '../components/containers/blog/blog-widget'; */
+import BlogWidget from '../components/containers/blog/blog-widget';
 import Fade from 'react-reveal/Fade';
 
 
@@ -15,9 +14,10 @@ const IndexPage = ({data}) => {
   const lang = "it"
   const { edges: portfolio } = data.allWordpressAcfPortfolio;
   const localePortfolio = portfolio.filter(item => item.node.acf.language===lang);
-  /* const { edges: blog } = data.allWordpressPost; */
+  const { edges: blog } = data.allWordpressPost;
+  const localeBlog = blog.filter(item => item.node.acf.language===lang);
 	return(
-	<Layout>
+	<Layout locale="it">
 		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
 		<Fade bottom>
     <Slider callToAction="Inviami un messaggio">
@@ -34,11 +34,9 @@ const IndexPage = ({data}) => {
 		<DescriptionText title="Sviluppo di esperienze digitali,
       prodotti e servizi" buttonText="Richiedi maggiori informazioni">
       Mi chiamo Filippo Rivolta. Ho una grande passione per l' Ui / Ux design e lo sviluppo frontend, realizzo User interface moderne e coinvolgenti prendendomi cura delle performance e dei dettagli del prodotto finale.
-	{/* 		My name is Filippo Rivolta. I am a passionate Ui / Ux designer and frontend developer focusing on modern and
-			engaging user interfaces. */}
 		</DescriptionText>
     <PortfolioCarousel items={localePortfolio} title="Lavori" locale="" callToAction="Contattami Ora"/>
-    {/* <BlogWidget items={blog}/> */}
+    <BlogWidget items={localeBlog} locale={lang}/>
 	</Layout>
 )};
 
@@ -64,7 +62,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allWordpressPost(limit:3) {
+    allWordpressPost(limit:1) {
       edges {
         node {
           id
@@ -74,6 +72,9 @@ export const pageQuery = graphql`
           excerpt
           date
           modified
+          acf{
+            language
+          }
         }
       }
     }

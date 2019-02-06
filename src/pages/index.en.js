@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Link } from 'gatsby'
 import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -7,7 +6,7 @@ import Slider from '../components/containers/slider/slider';
 import ServicesCarousel from '../components/containers/services/services-carousel.en';
 import DescriptionText from '../components/containers/description-text/DescriptionText';
 import PortfolioCarousel from '../components/containers/portfolio-carousel/PortfolioCarousel';
-/* import BlogWidget from '../components/containers/blog/blog-widget'; */
+import BlogWidget from '../components/containers/blog/blog-widget';
 import Fade from 'react-reveal/Fade';
 
 
@@ -15,7 +14,9 @@ const IndexPage = ({data}) => {
   const lang = "en"
   const { edges: portfolio } = data.allWordpressAcfPortfolio;
   const localePortfolio = portfolio.filter(item => item.node.acf.language===lang);
-  /* const { edges: blog } = data.allWordpressPost; */
+  const { edges: blog } = data.allWordpressPost;
+  const localeBlog = blog.filter(item => item.node.acf.language===lang);
+
 	return(
 	<Layout locale="en">
 		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
@@ -37,7 +38,7 @@ const IndexPage = ({data}) => {
 			engaging user interfaces.
 		</DescriptionText>
     <PortfolioCarousel items={localePortfolio} title="Works" locale="/en/" callToAction="Contact me now"/>
-    {/* <BlogWidget items={blog}/> */}
+   <BlogWidget items={localeBlog} locale={lang}/>
 	</Layout>
 )};
 
@@ -73,6 +74,9 @@ export const pageQuery = graphql`
           excerpt
           date
           modified
+          acf{
+            language
+          }
         }
       }
     }
