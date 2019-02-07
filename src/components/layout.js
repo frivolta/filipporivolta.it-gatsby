@@ -16,15 +16,9 @@ class Layout extends React.Component {
   render() {
     const { locale } = this.props;
     const renderLayout = (locale) => {
-<<<<<<< HEAD
       if (locale==='en'){
         return(
           <div style={{background: this.props.background}}>
-=======
-      if (locale === 'en') {
-        return (
-          <div>
->>>>>>> master
             <header>
               <Header locale="en" callToAction="Contact Me" />
               <MediaQuery query="(max-width: 495px)">
@@ -40,13 +34,8 @@ class Layout extends React.Component {
           </div>
         )
       } else {
-<<<<<<< HEAD
         return(
           <div style={{backgroundColor: this.props.background}}>
-=======
-        return (
-          <div>
->>>>>>> master
             <header>
               <Header locale="it" callToAction="Contattami" />
               <MediaQuery query="(max-width: 495px)">
