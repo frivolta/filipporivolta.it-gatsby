@@ -3,9 +3,31 @@
     display: block;
     position: relative;
     overflow: hidden;
-
+    p{
+        color: $primaryColor;
+    }
+    h1{
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 36px;
+        margin-top: 14px;
+    }
     img {
         max-width: 100%;
+    }
+}
+.Blog__content-date{
+    color: $altColor;
+}
+.Blog__featured-img {
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 36px;
+    margin-top: 36px;
+    img {
+        max-width: 100%;        
     }
 }
 
