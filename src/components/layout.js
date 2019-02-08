@@ -8,7 +8,6 @@ import '../styles/main.scss'
 import ShoutBar from './commons/shoutbar';
 import MediaQuery from 'react-responsive';
 import LanguageSwitcher from '../components/commons/languageSwitcher'
-import SEO from './seo'
 
 //import ReactGA from 'react-ga';
 
@@ -20,7 +19,6 @@ class Layout extends React.Component {
       if (locale === 'en') {
         return (
           <React.Fragment>
-          <SEO lang="en" title="Filippo Rivolta" keywords={[`filippo rivolta`, `web design milano`, `frontend developer milano`, `graphic designer milano`]} description="Passionate Ui / Ux designer and frontend developer focusing on modern and engaging user interfaces. Take a look!" />
           <div>
             <header>
               <Header locale="en" callToAction="Contact Me" />
