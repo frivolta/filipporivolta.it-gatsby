@@ -18,6 +18,8 @@ class Layout extends React.Component {
     const renderLayout = (locale) => {
       if (locale === 'en') {
         return (
+          <React.Fragment>
+          <SEO title="Filippo Rivolta" keywords={[`filippo rivolta`, `web design milano`, `frontend developer milano`, `graphic designer milano`]} description="Passionate Ui / Ux designer and frontend developer focusing on modern and engaging user interfaces. Take a look!" />
           <div>
             <header>
               <Header locale="en" callToAction="Contact Me" />
@@ -32,6 +34,7 @@ class Layout extends React.Component {
               <Footer locale="en" />
             </footer>
           </div>
+          </React.Fragment>
         )
       } else {
         return (
