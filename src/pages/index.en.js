@@ -18,7 +18,7 @@ const IndexPage = ({data}) => {
   /* const { edges: blog } = data.allWordpressPost; */
 	return(
 	<Layout locale="en">
-		<SEO title="Filippo Rivolta" keywords={[ `filippo`, `rivolta`, `filippo rivolta`, `web design`, `frontend developer` ]} />
+    <SEO lang="en" title="Filippo Rivolta" keywords={[`filippo rivolta`, `web design milano`, `frontend developer milano`, `graphic designer milano`]} description="Passionate Ui / Ux designer and frontend developer focusing on modern and engaging user interfaces. Take a look!" />
 		<Fade bottom>
       <Slider callToAction="Send me a message">
         <span className="word--wrap word--bold word--gradient">
