@@ -77,6 +77,13 @@ small{
   font-weight: 700;
   
 }
+pre {
+  background: black;
+  color: white;
+  padding: 20px;
+  margin-bottom: 36px;
+  margin-top: 36px;
+}
 .text{
   &--spacing{
     letter-spacing: 2px;

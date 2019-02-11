@@ -15,6 +15,16 @@
     img {
         max-width: 100%;
     }
+    ul{
+        margin-top:16px;
+        margin-bottom:16px;
+        font-size: 16px;
+        li{
+            color: black;
+            font-size: 16px;
+
+        }
+    }
 }
 .Blog__content-date{
     color: $altColor;

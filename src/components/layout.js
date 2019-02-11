@@ -16,16 +16,10 @@ class Layout extends React.Component {
   render() {
     const { locale } = this.props;
     const renderLayout = (locale) => {
-<<<<<<< HEAD
-      if (locale === 'en') {
-        return (
-          <React.Fragment>
-          <div>
-=======
       if (locale==='en'){
         return(
+          <React.Fragment>
           <div style={{background: this.props.background}}>
->>>>>>> dev
             <header>
               <Header locale="en" callToAction="Contact Me" />
               <MediaQuery query="(max-width: 495px)">
