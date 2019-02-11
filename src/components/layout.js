@@ -16,10 +16,16 @@ class Layout extends React.Component {
   render() {
     const { locale } = this.props;
     const renderLayout = (locale) => {
+<<<<<<< HEAD
       if (locale === 'en') {
         return (
           <React.Fragment>
           <div>
+=======
+      if (locale==='en'){
+        return(
+          <div style={{background: this.props.background}}>
+>>>>>>> dev
             <header>
               <Header locale="en" callToAction="Contact Me" />
               <MediaQuery query="(max-width: 495px)">
@@ -36,8 +42,8 @@ class Layout extends React.Component {
           </React.Fragment>
         )
       } else {
-        return (
-          <div>
+        return(
+          <div style={{backgroundColor: this.props.background}}>
             <header>
               <Header locale="it" callToAction="Contattami" />
               <MediaQuery query="(max-width: 495px)">
@@ -62,7 +68,8 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  locale: PropTypes.string.isRequired
+  locale: PropTypes.string.isRequired,
+  background: PropTypes.string
 }
 
 export default Layout
