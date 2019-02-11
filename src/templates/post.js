@@ -9,7 +9,7 @@ class Post extends React.Component {
   render() {
     const post = this.props.data.wordpressPost;
     const featuredMedia = post.featured_media.localFile.publicURL;
-    const metaDescription = '';
+    const metaDescription = post.acf.meta_description;
     return (
       <Layout background="white" locale={post.acf.language}>
         <SEO title={post.title} description={metaDescription} />
@@ -51,6 +51,7 @@ export const pageQuery = graphql`
     	}
       acf {
         language
+        meta_description
       }
     }
   }
